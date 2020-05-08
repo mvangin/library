@@ -1,0 +1,85 @@
+.bookForm-show {
+    display: none;
+}
+
+.inputList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.bookItem {
+    padding: 10px 0px;
+    margin: 6px 0px;
+    width: 80%;
+}
+
+.newBookButton {
+    width: 80%;
+    padding: 1rem;
+    font-size: 20px;
+    border: solid black 1px;
+    background: rgb(243, 98, 15);
+    color: white;
+
+    }
+
+.library {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+}
+
+#submitButton {
+    background: #6262f3;
+    color: white;
+}
+
+.book {
+    border: solid grey 2px;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: left;
+}
+
+.flexWrapper {
+    display:flex;
+    justify-content: space-around;
+    align-items:flex-start;
+}
+
+h1 {
+    margin: 0px 0px 10px 0px;
+    color: rgb(57, 57, 247);
+}
+
+.library-wrapper {
+    width: 60%;
+    text-align: center;
+    padding: 5px;
+    height: 100vh;
+    border-left: solid black 2px;
+}
+
+.form-wrapper {
+    padding: 5px;
+    width: 40%;
+}
+
+.deleteButton {
+    background: rgb(240, 56, 56);
+    color: white;
+    padding: 10px 8px;
+    border: solid black 1px;
+    border-radius: 5px;
+}
+
+.readStatusButton {
+    background: rgb(43, 158, 124);
+    border: solid black 1px;
+    color:rgb(255, 255, 255);
+    border-radius:5px;
+    padding: 10px 8px;
+    margin-right: 5px;
+}
