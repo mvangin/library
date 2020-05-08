@@ -10,7 +10,7 @@
 }
 
 .bookItem {
-    padding: 10px 0px;
+    padding: 20px 0px;
     margin: 6px 0px;
     width: 80%;
 }
@@ -57,13 +57,13 @@ h1 {
 .library-wrapper {
     width: 60%;
     text-align: center;
-    padding: 5px;
+    padding: 20px;
     height: 100vh;
     border-left: solid black 2px;
 }
 
 .form-wrapper {
-    padding: 5px;
+    padding: 20px;
     width: 40%;
 }
 
