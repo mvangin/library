@@ -1,8 +1,10 @@
 let myLibrary = [];
 const libraryDiv = document.querySelector(".library");
 const bookButton = document.querySelector(".newBookButton");
-const bookFormShow = document.querySelector(".bookForm-show");
 const bookForm = document.querySelector(".bookForm");
+const bgModal = document.querySelector(".bg-modal");
+const closeForm = document.querySelector(".closeForm");
+
 
 
 if (localStorage.length) {
@@ -19,7 +21,7 @@ function populateStorage() {
 }
 
 bookButton.addEventListener("click", () => {
-    bookFormShow.style.display = "block";
+    bgModal.style.display = "flex";
 })
 
 function bookObject(author, title, genre, pages, read) {
@@ -30,7 +32,16 @@ function bookObject(author, title, genre, pages, read) {
     this.read = read;
 }
 
-submitButton.addEventListener("click", addBookToLibrary);
+closeForm.addEventListener("click", () => {
+    bgModal.style.display = "none";
+});
+
+submitButton.addEventListener("click", (e) => {
+    bgModal.style.display = "none";
+    addBookToLibrary(e);
+});
+
+
 
 function addBookToLibrary(e) {
     e.preventDefault();

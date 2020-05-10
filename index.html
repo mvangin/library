@@ -6,66 +6,64 @@
 </head>
 
 <body>
-    
 
-    <div class="flexWrapper">
 
-        <div class="form-wrapper">
-            <button class="newBookButton"> Add new book </button>
-
-            <div class="bookForm-show">
-                <form class="bookForm">
-                    <ul class="inputList">
-
-                        <li>
-                            <label for='title'> </label>
-                            <input type="text" name="title" id="title" class="bookItem" placeholder="Title">
-                        </li>
-
-                        <li>
-                            <label for="author"> </label>
-                            <input type="text" name="author" id="author" class="bookItem" placeholder="Author">
-                        </li>
-
-                        <li>
-                            <label for='genre'> </label>
-                            <input type="text" name="genre" id="genre" class="bookItem" placeholder="Genre">
-                        </li>
-
-                        <li>
-
-                            <label for="numPages"> </label>
-                            <input type="text" name="numPages" id="numPages" class="bookItem"
-                                placeholder="Number Of Pages">
-                        </li>
-                        <li>
-                            <label for="reading"> </label>
-                            <select id="read">
-                                <option name="reading" value="Not yet"> Not Read</option>
-                                <option name="reading" value="Finished!"> Read</option>
-                            </select>
-
-                        </li>
-
-                        <li>
-                            <label for="submitButton"> </label>
-                            <button id="submitButton" type="submit" name="submitButton" class="bookItem"
-                                id="submitButton">
-                                Add Book </button>
-                        <li>
-
-                    </ul>
-                </form>
-            </div>
-        </div>
-
-        <div class="library-wrapper">
-            <h1> Library </h1>
-            <div class="library">
-
-            </div>
-        </div>
+    <div class="title-wrapper">
+        <h1> Library </h1>
     </div>
+
+
+    <button class="newBookButton"> Add new book </button>
+
+    <div class="bg-modal">
+        <form class="bookForm">
+            <div class="closeForm"> + </div>
+            <ul class="inputList">
+                <li>
+                    <label for='title'> </label>
+                    <input type="text" name="title" id="title" class="formItem" placeholder="Title">
+                </li>
+
+                <li>
+                    <label for="author"> </label>
+                    <input type="text" name="author" id="author" class="formItem" placeholder="Author">
+                </li>
+
+                <li>
+                    <label for='genre'> </label>
+                    <input type="text" name="genre" id="genre" class="formItem" placeholder="Genre">
+                </li>
+
+                <li>
+
+                    <label for="numPages"> </label>
+                    <input type="text" name="numPages" id="numPages" class="formItem" placeholder="Number Of Pages">
+                </li>
+                <li>
+                    <label for="reading"> </label>
+                    <select id="read" class="formItem">
+                        <option name="reading" value="Not yet"> Not Read</option>
+                        <option name="reading" value="Finished!"> Read</option>
+                    </select>
+
+                </li>
+
+                <li>
+                    <label for="submitButton"> </label>
+                    <button id="submitButton" type="submit" name="submitButton" class="formItem" id="submitButton">
+                        Add Book </button>
+                <li>
+
+            </ul>
+        </form>
+    </div>
+
+
+
+
+        <div class="library">
+        </div>
+
 
 
 
