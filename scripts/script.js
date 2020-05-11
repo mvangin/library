@@ -24,9 +24,9 @@ bookButton.addEventListener("click", () => {
     bgModal.style.display = "flex";
 })
 
-function bookObject(author, title, genre, pages, read) {
-    this.author = author;
+function bookObject(title, author, genre, pages, read) {
     this.title = title;
+    this.author = author;
     this.genre = genre;
     this.pages = pages;
     this.read = read;
@@ -61,18 +61,35 @@ function render(myLibrary) {
     libraryDiv.textContent = "";
     let index = 0;
     for (item of myLibrary) {
-        const newDiv = document.createElement("div");
-        newDiv.classList = "book";
-        const textNode = document.createTextNode(
-            "Title: " + item.author + "\n" +
-            "Author: " + item.title + "\n" +
-            "Genre: " + item.genre + "\n" +
-            "Pages: " + item.pages + "\n" +
-            "Finished? " + item.read + "\n");
+        const newBook = document.createElement("div");
+        const newTitle = document.createElement("p")
+        const newAuthor = document.createElement("p");
+        const newGenre = document.createElement("p");
+        const newPages = document.createElement("p");
+        const newRead = document.createElement("p");
+ 
+        newTitle.classList = "newTitle";
 
-        preObject = document.createElement('Pre');
-        preObject.appendChild(textNode);
-        newDiv.appendChild(preObject);
+        newTitle.textContent = item.title;
+        newAuthor.textContent = "Author: " + item.author;
+        newGenre.textContent = "Genre: " + item.genre;
+        newPages.textContent = "Pages: " + item.pages;
+        newRead.textContent = "Finished? " + item.read;
+
+        newBook.appendChild(newTitle);
+        newBook.appendChild(newAuthor);
+        newBook.appendChild(newGenre);
+        newBook.appendChild(newPages);
+        newBook.appendChild(newRead);
+
+        if (item.read == "") {
+            var x = document.createElement("IMG");
+            x.setAttribute("src", "images/checkmark2.png");
+            x.setAttribute("alt", "checkmark");
+            x.classList = "checkmark";
+
+            newRead.appendChild(x)
+        }
 
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
@@ -86,10 +103,17 @@ function render(myLibrary) {
         readStatus.classList = "readStatusButton";
         readStatus.dataset.bookIndex = index;
         readStatus.addEventListener("click", toggleRead);
-
-        newDiv.appendChild(readStatus);
-        newDiv.appendChild(deleteButton);
-        libraryDiv.appendChild(newDiv);
+        
+        const buttonDiv = document.createElement("div");
+        buttonDiv.appendChild(readStatus);
+        buttonDiv.appendChild(deleteButton);
+        buttonDiv.classList = "buttonDiv";
+        
+        const bookWrapper = document.createElement("div");
+        bookWrapper.classList = "book";
+        bookWrapper.appendChild(newBook);
+        bookWrapper.appendChild(buttonDiv)
+        libraryDiv.appendChild(bookWrapper);
         index += 1;
 
     }
@@ -107,10 +131,10 @@ function deleteBook(e) {
 function toggleRead(e) {
     let bookIndex = e.target.dataset.bookIndex;
 
-    if (myLibrary[bookIndex].read == "Finished!") {
+    if (myLibrary[bookIndex].read == "") {
         myLibrary[bookIndex].read = "Not yet"
     } else {
-        myLibrary[bookIndex].read = "Finished!";
+        myLibrary[bookIndex].read = "";
     }
     render(myLibrary)
 }

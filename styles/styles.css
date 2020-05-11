@@ -6,7 +6,9 @@ body {
 }
 
 .title-wrapper {
+    font-family: 'Cinzel', serif;
     text-align: center;
+    font-size: 30px;
     padding: 40px;
     border-bottom: solid rgb(99, 97, 97) 5px;
     margin-bottom: 20px;
@@ -30,18 +32,19 @@ body {
 
 .library {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     margin: 20px;
 }
 
 
 .newBookButton {
+
     padding: 1rem;
-    font-size: 20px;
+    font-size: 25px;
     border: solid black 1px;
     border-radius: 5px;
-    background: #e65c00;
+    background: rgba(5, 71, 68, 0.705);
     color: white;
     }
 
@@ -83,20 +86,21 @@ body {
     border: solid black 2px;
     border-radius: 5px;
     text-align: left;
-    padding: 5px;
-    padding-left: 45px;
-    overflow: hidden;
+    margin-left: 10px;
+    padding-left: 10px;
+    overflow: auto;
+    background: white;
+    font-size: 20px;
+    position: relative;
     }
 
 #submitButton {
     background: #6262f3;
     color: white;
-
 }
 
 h1 {
     margin: 0px 0px 10px 0px;
-
 }
 
 
@@ -104,9 +108,11 @@ h1 {
 .deleteButton {
     background: rgba(255, 0, 0, 0.699);
     color: white;
-    padding: 10px 8px;
+    padding: 8px 8px;
     border: solid black 1px;
     border-radius: 5px;
+    font-size: 20px;
+
 }
 
 .readStatusButton {
@@ -114,12 +120,32 @@ h1 {
     border: solid black 1px;
     color:rgb(255, 255, 255);
     border-radius:5px;
-    padding: 10px 8px;
+    padding: 8px 8px;
     margin-right: 5px;
+    font-size: 20px;
 }
 
 
 #read {
     padding: 1rem;
     text-align: center;
+}
+
+.buttonDiv {
+    text-align: center;
+    margin-top: 20px;
+}
+
+p {
+    margin-bottom: -10px;
+}
+
+.newTitle {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.checkmark {
+    margin-bottom: -6px;
+    margin-left: 6px;
 }
