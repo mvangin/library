@@ -2,6 +2,7 @@ body {
     margin:0;
     padding:0;
     text-align:center;
+    background: rgb(241, 236, 236);
 }
 
 .title-wrapper {
@@ -9,7 +10,7 @@ body {
     padding: 40px;
     border-bottom: solid rgb(99, 97, 97) 5px;
     margin-bottom: 20px;
-    background:rgba(214, 14, 14, 0.726);
+    background:#008CBA;
     color: white;
 }
 
@@ -39,7 +40,8 @@ body {
     padding: 1rem;
     font-size: 20px;
     border: solid black 1px;
-    background: #6262f3;
+    border-radius: 5px;
+    background: #e65c00;
     color: white;
     }
 
@@ -78,10 +80,12 @@ body {
 }
 
 .book {
-    border: solid grey 2px;
+    border: solid black 2px;
     border-radius: 5px;
     text-align: left;
     padding: 5px;
+    padding-left: 45px;
+    overflow: hidden;
     }
 
 #submitButton {
@@ -98,7 +102,7 @@ h1 {
 
 
 .deleteButton {
-    background: rgb(240, 56, 56);
+    background: rgba(255, 0, 0, 0.699);
     color: white;
     padding: 10px 8px;
     border: solid black 1px;
@@ -106,7 +110,7 @@ h1 {
 }
 
 .readStatusButton {
-    background: rgb(43, 158, 124);
+    background: grey;
     border: solid black 1px;
     color:rgb(255, 255, 255);
     border-radius:5px;

@@ -75,7 +75,7 @@ function render(myLibrary) {
         newDiv.appendChild(preObject);
 
         const deleteButton = document.createElement("button");
-        deleteButton.textContent = "delete";
+        deleteButton.textContent = "Delete";
         deleteButton.classList = "deleteButton"
         deleteButton.dataset.bookIndex = index;
         deleteButton.addEventListener("click", deleteBook);
