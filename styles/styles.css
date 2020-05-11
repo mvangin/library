@@ -9,7 +9,7 @@ body {
     font-family: 'Cinzel', serif;
     text-align: center;
     font-size: 30px;
-    padding: 40px;
+    padding: 30px;
     border-bottom: solid rgb(99, 97, 97) 5px;
     margin-bottom: 20px;
     background:#008CBA;
@@ -89,6 +89,7 @@ body {
     text-align: left;
     margin-left: 10px;
     padding-left: 10px;
+    padding-bottom: 10px;
     overflow: auto;
     background: white;
     font-size: 20px;
