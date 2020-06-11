@@ -4,6 +4,7 @@
 <head>
     <link href="styles/styles.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap" rel="stylesheet">
 
 </head>
 
@@ -11,7 +12,10 @@
 
 
     <div class="title-wrapper">
-        <h1> Pocket Library </h1>
+        <div class="title">
+            <h1> Pocket Library </h1>
+        </div>
+
     </div>
 
 
@@ -23,7 +27,7 @@
             <ul class="inputList">
                 <li>
                     <label for='title'> </label>
-                    <input type="text" name="title" id="title" class="formItem" placeholder="Title">
+                    <input type="text" name="title" id="title" class="formItem" placeholder="Title" required>
                 </li>
 
                 <li>
@@ -39,7 +43,7 @@
                 <li>
 
                     <label for="numPages"> </label>
-                    <input type="text" name="numPages" id="numPages" class="formItem" placeholder="Number Of Pages">
+                    <input type="number" name="numPages" id="numPages" class="formItem" placeholder="Number Of Pages" min="0">
                 </li>
                 <li>
                     <label for="reading"> </label>
@@ -62,8 +66,8 @@
 
 
 
-        <div class="library">
-        </div>
+    <div class="library">
+    </div>
 
 
 

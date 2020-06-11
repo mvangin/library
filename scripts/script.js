@@ -5,7 +5,11 @@ const bookForm = document.querySelector(".bookForm");
 const bgModal = document.querySelector(".bg-modal");
 const closeForm = document.querySelector(".closeForm");
 
-
+const title = document.querySelector("#title");
+const author = document.querySelector("#author");
+const genre = document.querySelector("#genre");
+const numPages = document.querySelector("#numPages");
+const read = document.querySelector("#read");
 
 if (localStorage.length) {
     myLibrary = retrieve();
@@ -34,24 +38,23 @@ function bookObject(title, author, genre, pages, read) {
 
 closeForm.addEventListener("click", () => {
     bgModal.style.display = "none";
+    bookForm.reset();
+
 });
 
 submitButton.addEventListener("click", (e) => {
-    bgModal.style.display = "none";
-    addBookToLibrary(e);
+    let validated = validateForm();
+    if (validated) {
+        e.preventDefault();
+        bgModal.style.display = "none";
+        addBookToLibrary(e);
+    }
 });
 
 
 
 function addBookToLibrary(e) {
-    e.preventDefault();
-    const title = document.querySelector("#title").value;
-    const author = document.querySelector("#author").value;
-    const genre = document.querySelector("#genre").value;
-    const numPages = document.querySelector("#numPages").value;
-    const read = document.querySelector("#read").value;
-
-    let newBook = new bookObject(title, author, genre, numPages, read);
+    let newBook = new bookObject(title.value, author.value, genre.value, numPages.value, read.value);
     myLibrary.push(newBook);
     render(myLibrary);
     bookForm.reset();
@@ -67,7 +70,7 @@ function render(myLibrary) {
         const newGenre = document.createElement("p");
         const newPages = document.createElement("p");
         const newRead = document.createElement("p");
- 
+
         newTitle.classList = "newTitle";
 
         newTitle.textContent = item.title;
@@ -103,12 +106,12 @@ function render(myLibrary) {
         readStatus.classList = "readStatusButton";
         readStatus.dataset.bookIndex = index;
         readStatus.addEventListener("click", toggleRead);
-        
+
         const buttonDiv = document.createElement("div");
         buttonDiv.appendChild(readStatus);
         buttonDiv.appendChild(deleteButton);
         buttonDiv.classList = "buttonDiv";
-        
+
         const bookWrapper = document.createElement("div");
         bookWrapper.classList = "book";
         bookWrapper.appendChild(newBook);
@@ -120,6 +123,13 @@ function render(myLibrary) {
     populateStorage();
 }
 
+function validateForm() {
+    if (!title.checkValidity() || (!numPages.checkValidity())) {
+        return false;
+    } else {
+        return true;
+    }
+}
 
 
 function deleteBook(e) {
@@ -138,77 +148,3 @@ function toggleRead(e) {
     }
     render(myLibrary)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-const createBookButton = document.createElement("button");
-createBookButton.setAttribute("class", "newBookButton");
-createBookButton.textContent = "NEW BOOK";
-libraryDiv.appendChild(createBookButton);
-
-
-const newBookButton = document.querySelector(".newBookButton");
-
-createBookButton.addEventListener("click", () => {
-    createNewForm();
-})
-function createNewForm() {
-    const form = document.createElement("form");
-    form.setAttribute("class", "bookForm");
-    const ul = document.createElement("ul");
-    form.appendChild(ul);
-    const submitButton = document.createElement("button");
-    submitButton.setAttribute("type","submit");
-    submitButton.textContent = "Submit";
-    form.append(submitButton);
-    libraryDiv.appendChild(form);
-
-
-    const li = document.createElement("li");
-    const input = document.createElement("input");
-    input.setAttribute("class", "formInput");
-    input.placeholder = "genre?";
-    const liINput = li.appendChild(input);
-    ul.appendChild(li);
-
-    const clonedLI = liINput.cloneNode(true);
-    ul.appendChild(clonedLI);
-
-    const clonedLI2 = liINput.cloneNode(true);
-    ul.appendChild(clonedLI2);
-/*
-    const formNode = document.querySelector(".bookForm");
-    const inputNode = document.querySelector(".formInput");
-
-    input2 = inputNode.cloneNode(true);
-    input2.setAttribute("placeholder","author?")
-    formNode.appendChild(input2)
-
-    input3 = inputNode.cloneNode(true);
-    input3.setAttribute("placeholder","title?")
-    formNode.appendChild(input3)
-
-    input4 = inputNode.cloneNode(true);
-    input4.setAttribute("placeholder","pages?")
-    formNode.appendChild(input4)
-
-    input5 = inputNode.cloneNode(true);
-    input5.setAttribute("placeholder","finished?")
-    formNode.appendChild(input5)
-*/
-

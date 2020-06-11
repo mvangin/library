@@ -16,6 +16,8 @@ body {
     color: white;
 }
 
+
+
 .bg-modal {
     display: none;
     width : 100%;
@@ -60,9 +62,10 @@ body {
 
 .closeForm {
     position: absolute;
+    cursor: pointer;
     right: -35px;
-    top: -60px;
-    padding:10px;
+    top: -55px;
+    padding:5px;
     font-size: 60px;
     color: white;
     background: none;
