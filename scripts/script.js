@@ -11,7 +11,7 @@ const genre = document.querySelector("#genre");
 const numPages = document.querySelector("#numPages");
 const read = document.querySelector("#read");
 
-if (localStorage.length) {
+if (typeof localStorage.bookLibrary !== "undefined") {
     myLibrary = retrieve();
     render(myLibrary);
 }
