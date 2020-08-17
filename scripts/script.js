@@ -17,11 +17,11 @@ if (localStorage.length) {
 }
 
 function retrieve() {
-    return JSON.parse(localStorage.getItem('array'));
+    return JSON.parse(localStorage.getItem('bookLibrary'));
 }
 
 function populateStorage() {
-    localStorage.setItem('array', JSON.stringify(myLibrary));
+    localStorage.setItem('bookLibrary', JSON.stringify(myLibrary));
 }
 
 bookButton.addEventListener("click", () => {
